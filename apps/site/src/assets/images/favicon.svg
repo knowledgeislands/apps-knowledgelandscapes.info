@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Knowledge Landscapes">
+  <style>
+    .ridge { fill: none; stroke: #1f4e79; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+    @media (prefers-color-scheme: dark) {
+      .ridge { stroke: #9cc3e6; }
+    }
+  </style>
+  <path class="ridge" d="M3 24 L11 12 L16 18 L21 9 L29 24 Z" />
+</svg>

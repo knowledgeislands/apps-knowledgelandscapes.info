@@ -1,0 +1,94 @@
+# Knowledge Islands repository configuration.
+# Its presence declares conformance with the Knowledge Islands repository standard.
+
+# -----------------------------------------------------------------------------
+# Foundation
+# -----------------------------------------------------------------------------
+
+[repo]
+backpacks = [
+  "knowledgeislands/ki-agent-backpack",
+]
+
+[skills.ki-repo]
+repo_type = "project"
+primary_shape = "ki-repo-website"
+repository = "https://github.com/knowledgeislands/apps-knowledgelandscapes.info"
+title = "Knowledge Landscapes"
+capital = "https://github.com/knowledgeislands/ki-principal"
+description = "Knowledge Landscapes: the holding page at knowledgelandscapes.info. Part of Knowledge Islands."
+repo_code = "KI-LANDSCAPES"
+supported_runtimes = [
+  "claude-code",
+  "claude-desktop",
+  "chatgpt-codex",
+]
+visibility = "public"
+license = "MIT"
+maturity = "founding"
+
+[skills.ki-authoring]
+
+[skills.ki-guides]
+
+# -----------------------------------------------------------------------------
+# Repository shape
+# -----------------------------------------------------------------------------
+
+[skills.ki-repo-project]
+
+[skills.ki-repo-website]
+
+[skills.ki-repo-website-content]
+
+[skills.ki-repo-website-cloudflare]
+
+# -----------------------------------------------------------------------------
+# Governance and runtime
+# -----------------------------------------------------------------------------
+
+[skills.ki-engineering]
+
+[skills.ki-env-binding]
+
+[skills.ki-env-binding-claude]
+
+[skills.ki-env-binding-chatgpt]
+
+[skills.ki-env-housekeeping]
+
+[skills.ki-env-housekeeping-claude]
+auto_memory = "disabled"
+
+[skills.ki-env-housekeeping-chatgpt]
+auto_memory = "disabled"
+
+[skills.ki-env-tokenomics]
+headroom = "recommended"
+preferred_model_type = "standard"
+# User-scoped; revisit if the global MCP set is pruned.
+budgets.mcp_servers = 20
+
+[skills.ki-env-tokenomics-claude]
+
+[skills.ki-env-tokenomics-chatgpt]
+
+# -----------------------------------------------------------------------------
+# Change management
+# -----------------------------------------------------------------------------
+
+[skills.ki-git]
+
+[skills.ki-work]
+adapter = "roadmap"
+
+[skills.ki-work-roadmap]
+
+[skills.ki-work-roadmap.areas]
+SITE = "Website content and delivery"
+
+# -----------------------------------------------------------------------------
+# Relationships
+# -----------------------------------------------------------------------------
+
+[skills.ki-trades]

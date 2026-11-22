@@ -1,0 +1,68 @@
+/* Knowledge Landscapes design tokens.
+
+   Semantic roles, shadcn/ui style: templates and main.css name a role, never a colour, so light and dark differ
+   only here. The dark values apply when the operating system prefers dark; the page has no toggle of its own.
+   @theme inline exposes each role to Tailwind utilities (bg-background, text-muted-foreground, …). The type is the
+   platform's own system stack, so no font is fetched. */
+
+@layer base {
+  :root {
+    --background: #f8f7f4;
+    --foreground: #1b2230;
+    --card: #ffffff;
+    --card-foreground: #1b2230;
+    --muted: #eeece6;
+    --muted-foreground: #4f5868;
+    --primary: #1f4e79;
+    --primary-foreground: #ffffff;
+    --accent: #e7eff7;
+    --accent-foreground: #173b5c;
+    --notice: #fdf3dc;
+    --notice-foreground: #5a4207;
+    --notice-border: #e2c37a;
+    --border: #d9d6cd;
+    --ring: #1f4e79;
+    --radius: 0.625rem;
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #11161f;
+      --foreground: #e6e9ef;
+      --card: #18202c;
+      --card-foreground: #e6e9ef;
+      --muted: #151c27;
+      --muted-foreground: #a7b0bf;
+      --primary: #9cc3e6;
+      --primary-foreground: #0d1622;
+      --accent: #1d2d40;
+      --accent-foreground: #cfe2f4;
+      --notice: #2b2412;
+      --notice-foreground: #f1dca4;
+      --notice-border: #7a6224;
+      --border: #2c3646;
+      --ring: #9cc3e6;
+    }
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-notice: var(--notice);
+  --color-notice-foreground: var(--notice-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}

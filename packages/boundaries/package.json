@@ -1,0 +1,13 @@
+{
+  "name": "@knowledgeislands/knowledge-landscapes-boundaries",
+  "description": "Vitest proof that the dependency boundaries in .dependency-cruiser.ts resolve and still fail on a deliberate crossing.",
+  "devDependencies": {
+    "vitest": "^5.1.1"
+  },
+  "private": true,
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "type": "module"
+}

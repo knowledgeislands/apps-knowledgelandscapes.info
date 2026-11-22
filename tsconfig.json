@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Root",
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "moduleDetection": "force",
+
+    /* Modules */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+
+    /* Runtime types — root-level scripts run under Bun. */
+    "types": ["bun"],
+
+    /* JavaScript Support */
+    "allowJs": true,
+
+    /* No emit — type-check only. */
+    "noEmit": true,
+
+    /* Interop Constraints */
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "erasableSyntaxOnly": true,
+
+    /* Completeness */
+    "skipLibCheck": true
+  },
+  /* Root-level .ts files only — non-recursive so site/ keeps its own config. */
+  "include": ["*.ts"],
+  "exclude": ["node_modules", "dist", "apps"]
+}

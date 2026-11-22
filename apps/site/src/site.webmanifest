@@ -1,0 +1,8 @@
+{
+  "name": "Knowledge Landscapes",
+  "short_name": "Knowledge Landscapes",
+  "description": "Knowledge Landscapes, part of Knowledge Islands, is coming soon.",
+  "start_url": "/",
+  "display": "browser",
+  "icons": [{ "src": "/assets/images/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

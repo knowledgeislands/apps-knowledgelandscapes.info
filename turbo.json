@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "stream",
+  "agentGuidance": false,
+  // Remote caching reaches an external service, so it is declared explicitly
+  // rather than by omission — turning it on later is a visible change.
+  "remoteCache": { "enabled": false },
+  // Files that govern every workspace while living outside all of them. The
+  // boundary rules and their tooling root are read only by packages/boundaries,
+  // whose own turbo.json declares them as inputs.
+  "globalDependencies": ["tsconfig.json", "biome.json"],
+  "tasks": {
+    // The site is a deployable: its input set is large and implicit (content,
+    // assets, data, the Eleventy config and its plugins, the route verifiers),
+    // so hash the whole workspace. An explicit glob list here is how a stale
+    // site gets published.
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**"]
+    },
+    "clean": { "cache": false },
+    // Each stage is its own cache unit per workspace, so a stage that nobody
+    // touched is replayed rather than re-run.
+    "test": { "dependsOn": ["^typecheck"] },
+    "typecheck": { "dependsOn": ["^typecheck"] },
+    "ki:site:dev": { "cache": false, "persistent": true },
+    "preview": { "cache": false, "persistent": true },
+    "deploy": { "cache": false },
+    "upload": { "cache": false }
+  }
+}

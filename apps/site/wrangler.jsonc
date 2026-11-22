@@ -1,0 +1,22 @@
+{
+  // info-knowledgelandscapes — Cloudflare Workers Static Assets deployment, not Pages.
+  // It deploys to the Knowledge Islands Cloudflare account. The Worker name is the
+  // hostname reversed.
+  "name": "info-knowledgelandscapes",
+  // The Knowledge Islands account.
+  "account_id": "4fbae92e1b7ef957f2b47a163762eae4",
+  "compatibility_date": "2026-11-01",
+  // Eleventy builds to dist/ inside this workspace; the Worker serves it directly.
+  "assets": { "directory": "dist" },
+  // Custom domains — apex plus www (www → apex via a Cloudflare redirect rule).
+  "routes": [
+    { "pattern": "knowledgelandscapes.info", "custom_domain": true },
+    { "pattern": "www.knowledgelandscapes.info", "custom_domain": true }
+  ],
+  // The custom domains are the only addresses: no workers.dev or preview URL.
+  // Both default to on.
+  "workers_dev": false,
+  "preview_urls": false,
+  // Persist Workers logs in the dashboard (Workers & Pages → info-knowledgelandscapes → Logs).
+  "observability": { "enabled": true }
+}

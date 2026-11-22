@@ -1,0 +1,66 @@
+{
+  "name": "@knowledgeislands/apps-knowledgelandscapes.info",
+  "description": "Knowledge Landscapes: the holding page at knowledgelandscapes.info. Part of Knowledge Islands.",
+  "version": "0.1.0",
+  "author": "kris@kris.me.uk",
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "2.6.8",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@types/bun": "^1.4.5",
+    "@types/node": "^26.6.6",
+    "dependency-cruiser": "^18.8.0",
+    "knip": "^6.47.0",
+    "lint-staged": "^17.6.1",
+    "rumdl": "^0.3.5",
+    "syncpack": "^15.3.3",
+    "turbo": "^2.11.13",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "homepage": "https://github.com/knowledgeislands/apps-knowledgelandscapes.info#readme",
+  "keywords": [
+    "bun",
+    "eleventy",
+    "knowledge-islands",
+    "tailwindcss",
+    "typescript",
+    "website"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,jsonc}": [
+      "biome check --no-errors-on-unmatched"
+    ],
+    "*.md": [
+      "rumdl check"
+    ]
+  },
+  "packageManager": "bun@1.4.4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knowledgeislands/apps-knowledgelandscapes.info.git"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "ki:deps:update": "bun update --latest",
+    "ki:site:build": "bun run --cwd apps/site build",
+    "ki:site:clean": "bun run --cwd apps/site clean",
+    "ki:site:deploy": "bun run --cwd apps/site deploy",
+    "ki:site:dev": "bun run --cwd apps/site ki:site:dev",
+    "ki:site:preview": "bun run --cwd apps/site preview",
+    "ki:site:upload": "bun run --cwd apps/site upload",
+    "prepare": "git config core.hooksPath .githooks && bun install --frozen-lockfile --cwd tooling/depcruise",
+    "self:typecheck": "bunx tsc --noEmit && turbo run typecheck",
+    "test": "turbo run test"
+  },
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}
